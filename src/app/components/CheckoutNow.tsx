@@ -16,7 +16,7 @@ const CheckoutNow = ({
   const { checkoutSingleItem } = useShoppingCart();
 
   function buyNow(priceId: string) {
-    checkoutSingleItem(priceId)
+    checkoutSingleItem(priceId);
   }
 
   const product = {
@@ -25,15 +25,16 @@ const CheckoutNow = ({
     price: price,
     currency: currency,
     image: urlFor(image).url(),
-    price_id: price_id
+    price_id: price_id,
   };
   return (
     <Button
+      variant={"outline"}
       onClick={() => {
         buyNow(product.price_id);
       }}
     >
-      Add To Cart
+      Checkout Now
     </Button>
   );
 };
